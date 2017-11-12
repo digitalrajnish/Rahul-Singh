@@ -1,165 +1,66 @@
 <!DOCTYPE html>
 <html>
-<title>Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bgimg {
+    background-image: url('/w3images/forestbridge.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
+
+.topleft {
+    iname-repeat:no-repeat;
+    height: 100px;
+    width:200px;
+    position: absolute;
+    top: 0;
+    left: 16px;
+    background-image: url('data:image/jpeg;base64,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')
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+hr {
+    margin: auto;
+    width: 40%;
+}
 </style>
-<body class="w3-light-grey">
+<body>
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="officialrajnish.png" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Rajnish Kumar</h2>
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Web Designer/developer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>PUNE, INDIA</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>sendmailtorajnish@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+918521604860</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>HTML5</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-          </div>
-          <p>CSS</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>JAVA SCRIPT</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>BOOTSTRAP</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>HINDI</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-          </div>
-          <p>German</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
-          <br>
-        </div>
-      </div><br>
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
-        </div>
-      </div>
-
-      <div class="w3-container w3-card-2 w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>MIT Academy Of Engineering</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2015 - Cont..</h6>
-          <p>Web Development! All I need to know in one place</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>DAV +2 High School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-          <p>Intermediate (12th)</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Ram Ratan Shahi High School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-          <p>Secondary (10th)</p> </br>
-        </div>
-      </div>
-
-<div class="w3-container w3-card-2 w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Certificate</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>MIT Academy Of Engineering</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2015 - Cont..</h6>
-          <p>Web Development! All I need to know in one place</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>DAV +2 High School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-          <p>Intermediate (12th)</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Ram Ratan Shahi High School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-          <p>Secondary (10th)</p> </br>
-        </div>
-      </div>
-
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
+<div class="bgimg">
+  <div class="topleft">
+    <p></p>
   </div>
-  
-  <!-- End Page Container -->
+  <div class="middle">
+    <h1>COMING SOON</h1>
+    <hr>
+    <p>35 days left</p>
+  </div>
+  <div class="bottomleft">
+    <p>I will be back soon...</p>
+  </div>
 </div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <a href="facebook.com" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
 
 </body>
 </html>
